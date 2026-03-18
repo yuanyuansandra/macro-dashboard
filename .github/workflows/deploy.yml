@@ -3,19 +3,13 @@ name: Deploy Dashboard
 on:
   push:
     branches: [main]
-    paths:
-      - 'dashboard/**'
   schedule:
-    # 每个工作日 14:00 UTC = 22:00 Beijing
     - cron: '0 14 * * 1-5'
   workflow_dispatch:
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: dashboard
 
     permissions:
       contents: write
@@ -42,4 +36,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dashboard/dist
+          publish_dir: ./dist
