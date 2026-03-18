@@ -1,0 +1,23 @@
+{
+  "model_version": "v0.8a",
+  "current_core_pce": 3.06,
+  "current_date": "2026-01",
+  "path": [
+    { "month": "2026-02", "value": 3.04 },
+    { "month": "2026-03", "value": 2.98 },
+    { "month": "2026-04", "value": 2.92 },
+    { "month": "2026-05", "value": 2.85 },
+    { "month": "2026-06", "value": 2.80 },
+    { "month": "2026-07", "value": 2.75 }
+  ],
+  "six_month_avg": 2.89,
+  "weighted_mae": 0.193,
+  "direction": "down",
+  "fed_target": 2.0,
+  "components": {
+    "housing":   { "weight": 0.15, "model": "AR(3) w=84",        "forecast_avg": 2.82 },
+    "supercore": { "weight": 0.52, "model": "AR(2) w=96",        "forecast_avg": 3.54 },
+    "goods":     { "weight": 0.20, "model": "AR(2)+PPIACO w=84", "forecast_avg": 1.22 },
+    "other":     { "weight": 0.13, "model": "AR(1) w=84",        "forecast_avg": 2.88 }
+  }
+}
